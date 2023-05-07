@@ -5,10 +5,11 @@ const mysql = require('mysql');
 
 
 const connection = mysql.createConnection({
-  host: 'localhost',
+  host: 'reto.c9znmfy7uvpg.us-east-2.rds.amazonaws.com',
   user: 'root',
   password: '',
-  database: 'kueski3'
+  database: 'kueski3',
+  port: '3306'
 });
 
 connection.connect((err) => {
@@ -174,7 +175,7 @@ app.get('/requests/:id', (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
